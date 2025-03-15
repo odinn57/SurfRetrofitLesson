@@ -78,7 +78,6 @@ class PostDetailsViewModel @Inject constructor(
         }
     }
 
-
     private fun onError(message: String) {
         _uiState.update { state ->
             state.copy(

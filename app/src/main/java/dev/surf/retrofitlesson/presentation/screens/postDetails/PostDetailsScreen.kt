@@ -85,9 +85,9 @@ fun PostDetailsScreen(
                 PostDetailsSuccess(
                     modifier = contentModifier,
                     postDetails = state.postDetails,
+                    onEditPostClick = postDetailsViewModel::updatePost
                 )
             }
-
         }
     }
 }
