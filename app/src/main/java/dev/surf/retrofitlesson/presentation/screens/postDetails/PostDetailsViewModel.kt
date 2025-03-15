@@ -2,6 +2,7 @@ package dev.surf.retrofitlesson.presentation.screens.postDetails
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import dev.surf.retrofitlesson.domain.models.PostModel
 import dev.surf.retrofitlesson.presentation.navigation.Route
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -27,11 +28,14 @@ class PostDetailsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         getPost(_uiState.value.postId)
     }
 
+    fun updatePost(postModel: PostModel) {
+        // TODO("Отправить запрос на изменение поста посте")
+    }
+
     private fun getPost(id: Int) {
         // TODO("Отправить запрос на получение информации о посте")
         onError("Not implement yet!")
     }
-
 
     private fun onError(message: String) {
         _uiState.update { state ->
