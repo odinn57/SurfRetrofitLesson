@@ -9,6 +9,15 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 
+# Добавленные зависимости для логики и работы с сетью
+retrofit2Version = "2.11.0"
+okhttp3Version = "4.9.3"
+hiltVersion = "2.51.1"
+hiltNavigationComposeVersion = "1.2.0"
+coroutinesVersion = "1.10.1"
+coroutinesLifecycleVersion = "2.8.7"
+navigationCompose = "2.8.8"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,8 +34,38 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+#Retrofit
+retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2Version" }
+retrofit2GsonConverter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit2Version" }
+
+#OkHttp
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3Version" }
+okhttp3Logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3Version" }
+
+#Coroutines
+coroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutinesVersion" }
+
+#Coroutine Lifecycle Scopes
+lifecycleViewModel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "coroutinesLifecycleVersion" }
+
+#Hilt
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
+hiltNavigationCompose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationComposeVersion" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+
+#Navigation
+navigationCompose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+#Hilt
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+
+##Kapt
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+
 

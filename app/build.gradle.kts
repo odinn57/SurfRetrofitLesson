@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    // Настройка плагинов для Hilt
+    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.kotlinKapt)
 }
 
 android {
@@ -56,4 +60,31 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Hilt
+    implementation(libs.hilt)
+    implementation(libs.hiltNavigationCompose)
+    kapt(libs.hiltCompiler)
+
+    // Retrofit
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2GsonConverter)
+
+    //OkHttp
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3Logging)
+
+    //Coroutines
+    implementation(libs.coroutinesCore)
+    implementation(libs.coroutinesAndroid)
+
+    //Coroutine Lifecycle Scopes
+    implementation(libs.lifecycleViewModel)
+
+    //Navigation
+    implementation(libs.navigationCompose)
+}
+
+kapt {
+    correctErrorTypes = true
 }
