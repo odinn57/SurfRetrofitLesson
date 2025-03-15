@@ -19,8 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.surf.retrofitlesson.presentation.screens.components.DefaultErrorScreen
 import dev.surf.retrofitlesson.presentation.screens.components.DefaultLoadingScreen
 import dev.surf.retrofitlesson.presentation.screens.postDetails.components.PostDetailsSuccess
@@ -29,7 +29,7 @@ import dev.surf.retrofitlesson.presentation.screens.postDetails.components.PostD
 fun PostDetailsScreen(
     onNavigateUp: () -> Unit,
     modifier: Modifier,
-    postDetailsViewModel: PostDetailsViewModel = viewModel()
+    postDetailsViewModel: PostDetailsViewModel = hiltViewModel()
 ) {
     val state by postDetailsViewModel.uiState.collectAsStateWithLifecycle()
 
