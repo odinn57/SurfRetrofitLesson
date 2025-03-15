@@ -1,4 +1,4 @@
-package dev.surf.retrofitlesson.ui.theme
+package dev.surf.retrofitlesson.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
