@@ -18,8 +18,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.surf.retrofitlesson.presentation.screens.components.DefaultErrorScreen
 import dev.surf.retrofitlesson.presentation.screens.components.DefaultLoadingScreen
 import dev.surf.retrofitlesson.presentation.screens.main.components.MainScreenSuccess
@@ -28,7 +28,7 @@ import dev.surf.retrofitlesson.presentation.screens.main.components.MainScreenSu
 fun MainScreen(
     modifier: Modifier,
     onPostClick: (postId: Int) -> Unit,
-    mainViewModel: MainViewModel = viewModel()
+    mainViewModel: MainViewModel = hiltViewModel()
 ) {
     val state by mainViewModel.uiState.collectAsStateWithLifecycle()
 
